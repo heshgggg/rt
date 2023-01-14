@@ -97,7 +97,6 @@ jobs:
         mkdir -p /home/$USER/openwrt/staging_dir/host/llvm-bpf/bin/
         sudo ln -s /usr/bin/clang-12 /home/$USER/openwrt/staging_dir/host/llvm-bpf/bin/clang
         make defconfig
-        make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
