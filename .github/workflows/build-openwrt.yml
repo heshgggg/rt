@@ -93,6 +93,9 @@ jobs:
       id: package
       run: |
         cd openwrt
+        apt-get install clang-12 llvm-12
+        ln -s /usr/bin/clang-12 /home/ogarcia/openwrt/staging_dir/host/llvm-bpf/bin/clang
+        mkdir -p /home/ogarcia/openwrt/staging_dir/host/llvm-bpf/bin/
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
